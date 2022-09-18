@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Blog
+{% endblock %}
+
+{% block css%}
+{% endblock %}
+
+{% block js%}
+{% endblock %}
+
+{% block header %}
+Blog
+{% endblock %}
+
+{% block blog.active %}
+active
+{% endblock %}
+
+{% block content %}
+<br>
+<h4>Categories</h4>
+<a href="#" class="button"><button type="button" class="button">Technology</button></a>
+<a href="#" class="button"><button type="button" class="button">Computers</button></a>
+<a href="#" class="button"><button type="button" class="button">Travel</button></a>
+<a href="#" class="button"><button type="button" class="button">Gaming</button></a>
+<br>
+<a href="#" class="button"><button type="button" class="button">General</button></a>
+<a href="#" class="button"><button type="button" class="button">Educational</button></a>
+<a href="#" class="button"><button type="button" class="button">Kids</button></a>
+<a href="#" class="button"><button type="button" class="button">Diy</button></a>
+<br>
+<br>
+<br>
+
+{% for post in post %}
+<a href="{% url 'postview' post.pk %}"><h5>{{ post.title }}</h5></a>
+
+<p>Category: {{ post.category }}<br>
+Publication date: {{ post.pub_date }}</p>
+<hr>
+{% endfor %}
+
+
+{% endblock %}

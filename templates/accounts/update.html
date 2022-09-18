@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Update
+{% endblock %}
+
+{% block css%}
+{% endblock %}
+
+{% block js%}
+{% endblock %}
+
+{% block header %}
+Update
+{% endblock %}
+
+{% block update.active %}
+active
+{% endblock %}
+
+{% block content %}
+<form method="POST" action=".">{% csrf_token %}
+
+<p>first name:</p>
+<input type="text" name="first_name" maxlength="250" required="" id="id_first_name" value="{{ acc.first_name }}">
+<br>
+<br>
+<p>surname:</p>
+<input type="text" name="surname" maxlength="250" required="" id="id_surname" value="{{ acc.surname }}">
+<br>
+<br>
+<p>email:</p>
+<input type="email" name="email" maxlength="60" required="" id="id_email" value="{{ acc.email }}">
+<br>
+<br>
+<p>phone number:</p>
+<input type="number" name="phone_number" min="0" required="" id="id_phone_number" value="{{ acc.phone_number }}">
+<br>
+<br>
+<p>continent:</p>
+<select name="continent" id="id_continent">
+  <option value="africa">Africa</option>
+
+  <option value="asia">Asia</option>
+
+  <option value="europe">Europe</option>
+
+  <option value="north america">North America</option>
+
+  <option value="south america">South America</option>
+
+  <option value="antarctica">Antarctica</option>
+
+</select>
+<br><br>
+<a href="{% url 'updateview' %}"><button type="submit" class="btn btn-success">update</button></a>
+<a href="{% url 'homeview' %}"><button type="button" class="btn btn-primary">back</button></a>
+</form>
+{% endblock %}

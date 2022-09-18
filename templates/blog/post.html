@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ post.page_title }}
+{% endblock %}
+
+{% block css%}
+.content-div {
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding-left: 5px;
+}
+{% endblock %}
+
+{% block js%}
+{% endblock %}
+
+{% block header %}
+{{ post.title }}
+{% endblock %}
+
+{% block blog.active %}
+active
+{% endblock %}
+
+{% block content %}
+<div class="content-div">{{ post.content | safe }}</div>
+<br>
+<p>Author: {{ post.author }}</p>
+<p>Category: {{ post.category }}</p>
+<p>Publication date: {{ post.pub_date }}</p>
+<hr>
+<p>External links</p>
+<a href="{{ post.ext_link1 }}" class="link">{{ post.l1 }}</a><br>
+<a href="{{ post.ext_link2 }}" class="link">{{ post.l2 }}</a><br>
+<a href="{{ post.ext_link3 }}" class="link">{{ post.l3 }}</a><br>
+<a href="{{ post.ext_link4 }}" class="link">{{ post.l4 }}</a><br>
+<a href="{{ post.ext_link5 }}" class="link">{{ post.l5 }}</a><br>
+<hr>
+<br>
+
+{% if post.author == request.user %}
+<a href="{% url 'deleteview' post.pk %}"><button type="button" class="btn btn-danger">delete</button></a>
+<a href="{% url 'updatepostview' post.pk %}"><button type="button" class="btn btn-success">update</button></a>
+{% endif %}
+
+<a href="{% url 'homeview' %}"><button type="button" class="btn btn-primary">back</button></a>
+{% endblock %}

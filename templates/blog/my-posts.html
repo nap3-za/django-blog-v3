@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}
+My Posts
+{% endblock %}
+
+{% block css%}
+{% endblock %}
+
+{% block js%}
+{% endblock %}
+
+{% block header %}
+My Posts
+{% endblock %}
+
+{% block myposts.active %}
+active
+{% endblock %}
+
+{% block content %}
+<br>
+<h4>My Posts</h4>
+<hr>
+{% for post in post %}
+<a href="{% url 'postview' post.pk %}"><h5>{{ post.title }}</h5></a>
+
+<p>Category: {{ post.category }}<br>
+Publication date: {{ post.pub_date }}</p>
+<hr>
+{% endfor %}
+<a href="{% url 'homeview' %}"><button type="submit" class="btn btn-primary">back</button></a>
+{% endblock %}

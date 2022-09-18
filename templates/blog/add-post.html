@@ -1,0 +1,116 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Add post
+{% endblock %}
+
+{% block css%}
+{% endblock %}
+
+{% block js%}
+{% endblock %}
+
+{% block header %}
+Add post
+{% endblock %}
+
+{% block addpost.active %}
+active
+{% endblock %}
+
+{% block content %}
+<form method="POST">{% csrf_token %}
+<p>title:</p>
+<input type="text" name="title" maxlength="200" required="" id="id_title">
+
+<br><br>
+
+<p>page title:</p>
+<input type="text" name="page_title" maxlength="100" required="" id="id_page_title">
+
+<br><br>
+
+<p>content:</p>
+<textarea name="content" cols="40" rows="10" required="" id="id_content"></textarea>
+
+<br><br>
+
+<p>category:</p>
+<select name="category" id="id_category">
+  <option value="general">General</option>
+
+  <option value="technology">Technology</option>
+
+  <option value="celebrity">Celebrities</option>
+
+  <option value="computers">Computers</option>
+
+  <option value="educational">Educational</option>
+
+  <option value="travel">Travel</option>
+
+  <option value="kids">Kids</option>
+
+  <option value="gaming">Gaming</option>
+
+  <option value="diy">Diy</option>
+
+<br><br>
+
+<p>visibility:<br>
+</select></p>
+<p><label for="id_visibility">Visibility:</label> <select name="visibility" id="id_visibility">
+  <option value="public">Public</option>
+
+  <option value="private">Private</option>
+
+<br><br>
+
+<p>status:</p>
+</select></p>
+<p><label for="id_status">Status:</label> <select name="status" id="id_status">
+  <option value="draft">Draft</option>
+
+  <option value="published">Published</option>
+
+</select></p>
+
+<br><br>
+
+<p>name for link 1:</p>
+<input type="text" name="l1" maxlength="150" id="id_l1">
+<p>link 1:</p>
+<input type="text" name="ext_link1" maxlength="100" id="id_ext_link1">
+
+<br><br>
+
+<p>name for link 2:</p>
+<input type="text" name="l2" maxlength="150" id="id_l2">
+<p>link 2:</p>
+<input type="text" name="ext_link2" maxlength="100" id="id_ext_link2">
+
+<br><br>
+
+<p>name for link 3:</p>
+<input type="text" name="l3" maxlength="150" id="id_l3">
+<p>link 3:</p>
+<input type="text" name="ext_link3" maxlength="100" id="id_ext_link3">
+
+<br><br>
+
+<p>name for link 4:</p>
+<input type="text" name="l4" maxlength="150" id="id_l4">
+<p>link 4:</p>
+<input type="text" name="ext_link4" maxlength="100" id="id_ext_link4">
+
+<br><br>
+
+<p>name for link 5:</p>
+<input type="text" name="l5" maxlength="150" id="id_l5">
+<p>link 5:</p>
+<input type="text" name="ext_link5" maxlength="100" id="id_ext_link5">
+<br><br>
+<button type="submit" class="btn btn-success">publish</button>
+<a href="{% url 'homeview' %}"><button type="button" class="btn btn-primary">back</button></a>
+</form>
+{% endblock %}

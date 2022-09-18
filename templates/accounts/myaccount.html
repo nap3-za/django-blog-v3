@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}
+My Account
+{% endblock %}
+
+{% block css%}
+{% endblock %}
+
+{% block js%}
+{% endblock %}
+
+{% block header %}
+My Account
+{% endblock %}
+
+{% block myacc.active %}
+active
+{% endblock %}
+
+{% block content %}
+<p>Firstname: {{ acc.first_name }}</p>
+<p>Surname: {{ acc.surname }}</p>
+<p>Email: {{ acc.email }}</p>
+<p>Phone number: {{ acc.phone_number }}</p>
+<p>Country: {{ acc.continent }}</p>
+<br>
+<a href="{% url 'deleteaccview' %}"><button type="button" class="btn btn-danger">delete</button></a>
+<a href="{% url 'updateview' %}"><button type="button" class="btn btn-info">update</button></a>
+<a href="{% url 'homeview' %}"><button type="button" class="btn btn-primary">back</button></a>
+{% endblock %}

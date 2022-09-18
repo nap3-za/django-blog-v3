@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Login
+{% endblock %}
+
+{% block css%}
+{% endblock %}
+
+{% block js%}
+{% endblock %}
+
+{% block header %}
+Login
+{% endblock %}
+
+{% block login.active %}
+active
+{% endblock %}
+
+{% block content %}
+<form method="POST" action=".">{% csrf_token %}
+
+<p>username:</p>
+<input type="text" name="username" maxlength="250" required="" id="id_username">
+<br>
+<br>
+<p>email:</p>
+<input type="email" name="email" maxlength="60" required="" id="id_email">
+<br>
+<br>
+<p>password:</p>
+<input type="password" name="password" maxlength="200" required="" id="id_password">
+<br><br>
+<button type="submit" class="btn btn-success">submit</button>
+<a href="{% url 'homeview' %}"><button type="button" class="btn btn-primary">back</button></a>
+</form>
+{% endblock %}

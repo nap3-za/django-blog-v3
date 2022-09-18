@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Categories
+{% endblock %}
+
+{% block css%}
+{% endblock %}
+
+{% block js%}
+{% include 'blog/js.js' %}
+{% endblock %}
+
+{% block header %}
+Categories
+{% endblock %}
+
+{% block category.active %}
+active
+{% endblock %}
+
+{% block content %}
+<br>
+<h4>Categories</h4>
+<button type="button" class="btn btn-primary" onclick="tech()">Technology</button>
+<button type="button" class="btn btn-info">Computers</button>
+<button type="button" class="btn btn-success">Travel</button>
+<button type="button" class="btn btn-danger">Gaming</button>
+<hr>
+<button type="button" class="btn btn-primary">General</button>
+<button type="button" class="btn btn-info">Educational</button>
+<button type="button" class="btn btn-success">Kids</button>
+<button type="button" class="btn btn-danger">Diy</button>
+<br>
+<br>
+<br>
+
+<div id="tech_content">
+</div>
+{% endblock %}
